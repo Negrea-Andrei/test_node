@@ -1,12 +1,8 @@
-let i = 1;
+let fs = require('fs');
 
-function printHello() {
-    console.log(`Hello ${i}`);
-    i++;
-
-    if (i <= 100) {
-        setTimeout(printHello, 1000 + i);
+fs.rename('b.json', 'bbbbbbbbbbb.json', err => {
+    if(err) {
+        return console.log("error")
     }
-}
+})
 
-setTimeout(printHello, 1000);
