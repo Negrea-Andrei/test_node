@@ -1,13 +1,7 @@
-const myURL = new URL('/foo', 'https://example.org/');
+const EventEmitter = require('node:events');
+const eventEmitter = new EventEmitter();
 
-myURL.password = "123"
-myURL.username = "ala"
-
-if(myURL.password === "123" && myURL.username === "ala") {
-    console.log("Welcome")
-    console.log(myURL)
-}
-else {
-    console.log('Error')
-    console.log(myURL)
-}
+eventEmitter.on('start', number => {
+    console.log(`started ${number}`);
+  });
+  eventEmitter.emit('start', 23);
